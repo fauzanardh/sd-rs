@@ -22,7 +22,7 @@ def add_tab():
                 inputs=[host, port],
             )
 
-    return [(ui, "ReverseShell", "reverse_shell")]
+    return [(ui, "Model Converter", "reverse_shell")]
 
 
 def do_convert(host, port):
